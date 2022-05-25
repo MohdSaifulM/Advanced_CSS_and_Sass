@@ -1,0 +1,17 @@
+/* Universal Reset */
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	/* since 100% on a default browser font-size is 16px so 10px is 62.5% */
+	font-size: 62.5%
+}
+
+body {
+	box-sizing: border-box;
+}
