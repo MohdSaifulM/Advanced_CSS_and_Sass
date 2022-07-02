@@ -1,6 +1,5 @@
 .header {
-	/* 95% of the viewport height */
-	height: 95vh;
+	height: 80vh;
 	background-image: linear-gradient(to right bottom, 
 		rgba($color-primary-light, 0.8),
 		rgba($color-primary-dark, 0.8)),
@@ -8,12 +7,19 @@
 	background-size: cover;
 	background-position: top;
 	position: relative;
-	/* coordinates from top left clockwise */
-	-webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+	
+	@supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+		/* coordinates from top left clockwise */
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+		clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+		/* 95% of the viewport height */
+		height: 95vh;
+	}
 
 	// ! Media queries are always in em
-	@media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+	@media (min-resolution: 192dpi) and (min-width: 37.5em),
+		(-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+		(min-width: 125em) {
 		background-image: linear-gradient(to right bottom, 
 			rgba($color-primary-light, 0.8),
 			rgba($color-primary-dark, 0.8)),
