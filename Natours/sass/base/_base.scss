@@ -20,7 +20,7 @@ html {
 	// 	font-size: 50%;
 	// }
 
-	// ! Largest query first
+	// ! Last query will be applied if screen is between both queries
 	
 	@include respond(tab-land) {	// width < 1200?
 		font-size: 56.25%;	// 1rem = 9px, 9/16 = 56.25%
@@ -38,4 +38,9 @@ html {
 
 body {
 	box-sizing: border-box;
+	padding: 3rem;
+
+	@include respond(tab-port) {
+		padding: 0;
+	}
 }

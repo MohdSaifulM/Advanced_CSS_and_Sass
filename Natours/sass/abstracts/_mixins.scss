@@ -33,7 +33,10 @@ $breakpoint arguement choices:
 - big-desktop
 
 1em = 16px
+
 */
+
+// ! ORDER TO IMPLEMENT MEDIA QUERIES ON APPLICATION: Base + typography > general layout + grid > page layout > components
 
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
