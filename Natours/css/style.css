@@ -1,3 +1,18 @@
+/*
+0-600px:        Phone
+600-900px:      Tablet potrait
+900-1200px:     Tablet landscape
+1200-1800px:    Desktop
+1800px ~:       Big Desktop
+
+$breakpoint arguement choices:
+- phone
+- tap-port
+- tab-land
+- big-desktop
+
+1em = 16px
+*/
 /* Color variables */
 /* Grid */
 /* Font */
@@ -38,8 +53,17 @@
   box-sizing: inherit; }
 
 html {
-  /* since 100% on a default browser font-size is 16px so 10px is 62.5% */
+  /* since 100% on a default browser font-size is 16px so 10px is 62.5% : defines 1rem */
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
